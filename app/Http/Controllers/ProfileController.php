@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
@@ -14,11 +13,11 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
+    public function edit($id)
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $user = User::findOrFail($id); // Ottieni l'utente dal database usando l'ID
+
+        return view('admin.projects.edit', compact('user')); // Passa l'utente alla vista
     }
 
     /**

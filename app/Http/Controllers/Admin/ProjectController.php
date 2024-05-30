@@ -14,10 +14,10 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $project = Project::all();
-        return view('admin.projects.index', compact('project'));
-    }
+{
+    $projects = Project::all();
+    return view('admin.projects.index', compact('projects'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -67,9 +67,11 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit($id)
     {
-        return view('admin.projects.edit', compact('project'));
+        $user = auth()->user(); // Ottieni l'utente autenticato
+
+        return view('admin.projects.edit', compact('user'));
     }
 
     /**

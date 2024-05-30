@@ -1,4 +1,5 @@
 @use './partials/variables' as *;
+@import "~bootstrap/scss/bootstrap";
 
 $fa-font-path: "../webfonts" !default;
 
@@ -9,6 +10,38 @@ $fa-font-path: "../webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
-    color: $text-color;
+body {
+    background-color: #f8fafc;
 }
+
+.container {
+    margin-top: 20px;
+}
+
+.card-header {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+}
+
+.card-body {
+    color: #212529;
+}
+
+.alert {
+    text-align: center;
+}
+
+// Additional custom styles
+.navbar {
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: #007bff !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+

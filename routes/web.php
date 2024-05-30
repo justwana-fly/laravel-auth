@@ -24,10 +24,15 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('admin/projects', ProjectController::class);
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('projects', ProjectController::class);
+    });
 
-    // Profile routes
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // routes/web.php
+
+// routes/web.php
+
+    Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
