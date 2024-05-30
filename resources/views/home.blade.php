@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
-
 @section('content')
-<main>
-    <h1>Home page</h1>
-</main>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Home</div>
 
+                <div class="card-body">
+                    Welcome to the home page!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
